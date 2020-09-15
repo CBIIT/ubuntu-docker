@@ -2,7 +2,7 @@ pipeline {
   environment {
     registry = "nrizk83/ubuntu-base-image"
     registryCredential = 'docker-hub'
-    dockerImage = 'ubuntu-18-0-4-base'
+    dockerImage = ''
   }
   agent any
    triggers {
@@ -21,6 +21,11 @@ pipeline {
         }
       }
     }
+    stage('Run docker image') {
+      steps{
+        sh "docker run -it $registry:$BUILD_NUMBER /bin/bash" 
+      }
+    }
     stage('Deploy Image') {
       steps{
         script {
@@ -28,11 +33,6 @@ pipeline {
             dockerImage.push()
           }
         }
-      }
-    }
-    stage('Remove Unused docker image') {
-      steps{
-        sh "docker rmi $registry:$BUILD_NUMBER"
       }
     }
   }
