@@ -21,7 +21,7 @@ pipeline {
     }
     stage('Run docker image') {
       steps{
-        sh "docker run -it $registry:$BUILD_NUMBER /bin/bash" 
+        sh "docker run -i $registry:$BUILD_NUMBER /bin/bash" 
       }
     }
     stage('Deploy Image') {
