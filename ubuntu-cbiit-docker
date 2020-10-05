@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    registry = "docker-linux-poc-user/ncidockerhub.nci.nih.gov/docker-linux-poc/"
+    registry = "docker-linux-poc-user/ncidockerhub.nci.nih.gov/docker-linux-poc"
     registryCredential = 'docker-cbiit-hub'
     dockerImage = ''
     dockerImagetag =''
