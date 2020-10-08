@@ -28,9 +28,16 @@ RUN apt-get install -qy vim
 #RUN apt-get -qy purge --auto-remove perl
 RUN apt-get -qy purge --auto-remove libapparmor1
 #RUN apt-get -qy purge --auto-remove libldap-2.4-2
-RUN apt-get -qy purge --auto-remove libsqlite3-0
+#RUN apt-get -qy purge --auto-remove libsqlite3-0
 RUN apt-get -qy purge --auto-remove libxml2
-RUN apt-get -qy purge --auto-remove xdg-user-dirs
+#RUN apt-get -qy purge --auto-remove xdg-user-dirs
+
+# run upgrade
+RUN apt-get -qy upgrade
+
+# update sources list
+RUN apt-get clean
+RUN apt-get update
 
 # cleanup
 RUN apt-get -qy autoremove
