@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/nci-snow-cicd/ubuntu.git'
+        git 'https://github.com/CBIIT/ubuntu-docker.git'
       }
     }
     stage('Building image') {
