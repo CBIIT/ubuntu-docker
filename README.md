@@ -1,4 +1,4 @@
-# Ubuntu OS Version: 8
+# Ubuntu OS Version: 20.04
 Ubuntu Base OS Docker Image
 
 # Project Overview
